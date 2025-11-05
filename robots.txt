@@ -1,0 +1,10 @@
+# Allow all search engines to crawl the website
+User-agent: *
+Allow: /
+
+# Disallow private or unused pages (none for now)
+# Disallow: /temp/
+# Disallow: /drafts/
+
+# Specify the location of your sitemap
+Sitemap: https://www.light-of-god-karlesruhe.de/sitemap.xml
