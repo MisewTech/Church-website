@@ -4,126 +4,144 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>About Us | Licht Gottes Gemeinde – የእግዚአብሔር ብርሃን ቤተክርስትያን</title>
-  <meta name="description" content="Learn about Licht Gottes Gemeinde – Ethiopian and Eritrean Evangelical Church in Karlsruhe. Discover our mission, beliefs, and fellowship in Christ.">
-  <meta name="keywords" content="Ethiopian church Karlsruhe, Eritrean church Germany, evangelical church Karlsruhe, Amharic church Germany, Licht Gottes, Habesha church Germany">
-  <meta name="author" content="Licht Gottes Gemeinde">
 
   <style>
     body {
-      font-family: "Noto Sans Ethiopic", "Segoe UI", Arial, sans-serif;
-      background-color: #f4f7fb;
-      color: #222;
       margin: 0;
       padding: 0;
-      text-align: center;
-      line-height: 1.7;
+      font-family: "Noto Sans Ethiopic", Arial, sans-serif;
+      background-color: #f5f7fa;
+      color: #222;
     }
 
-    header {
-      background-color: #0055aa;
+    /* HEADER WITH BLURRED GIF */
+    .hero {
+      background: url('Gif.gif') center/cover no-repeat;
+      height: 260px;
+      display: flex;
+      align-items: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      backdrop-filter: blur(6px);
+      background: rgba(0, 0, 0, 0.45);
+    }
+
+    .hero-content {
+      position: relative;
+      display: flex;
+      align-items: center;
+      padding: 0 20px;
+      width: 100%;
+    }
+
+    .hero img {
+      width: 90px;
+      height: 90px;
+      border-radius: 50%;
+      margin-right: 20px;
+    }
+
+    .hero-text h1 {
+      margin: 0;
+      font-size: 2.2em;
+      color: red;
+      font-weight: bold;
+    }
+
+    .hero-text h2 {
+      margin: 5px 0 0 0;
+      font-size: 1.2em;
       color: white;
-      padding: 60px 20px;
     }
 
+    /* NAVIGATION */
     nav {
-      background-color: #003f80;
-      padding: 10px 0;
+      background: #003f80;
+      padding: 12px 0;
       text-align: center;
     }
 
     nav a {
       color: white;
+      margin: 0 18px;
+      font-size: 1.1em;
       text-decoration: none;
       font-weight: 500;
-      margin: 0 15px;
-      font-size: 1.1em;
-      transition: color 0.3s ease;
-    }
-
-    nav a:hover {
-      color: #ffdd33;
-      text-decoration: underline;
     }
 
     nav a.active {
       border-bottom: 2px solid #ffdd33;
     }
 
-    h1 {
-      font-size: 2.2em;
-      margin: 0;
-      font-weight: bold;
+    nav a:hover {
+      color: #ffdd33;
     }
 
+    /* MAIN CONTENT */
     main {
-      padding: 40px 20px;
-      max-width: 800px;
-      margin: auto;
-      text-align: left;
-    }
-
-    ul {
-      list-style: disc inside;
-      padding-left: 20px;
-    }
-
-    a {
-      color: #0055aa;
-      text-decoration: none;
-    }
-
-    a:hover {
-      text-decoration: underline;
+      max-width: 900px;
+      margin: 40px auto;
+      padding: 0 20px;
+      line-height: 1.7;
     }
 
     footer {
-      background-color: #222;
+      background: #222;
       color: #ccc;
       padding: 15px;
+      text-align: center;
+      margin-top: 40px;
       font-size: 0.9em;
-      margin-top: 30px;
     }
   </style>
 </head>
 
 <body>
-  <header>
-    <h1>About Licht Gottes Gemeinde</h1>
-  </header>
 
+  <!-- HERO -->
+  <div class="hero">
+    <div class="hero-content">
+      <img src="logo.png" alt="Church Logo">
+      <div class="hero-text">
+        <h1>የእግዚአብሔር ብርሃን ቤተክርስትያን</h1>
+        <h2>Licht Gottes Gemeinde – Karlsruhe</h2>
+      </div>
+    </div>
+  </div>
+
+  <!-- NAVIGATION -->
   <nav>
     <a href="index.html">Home</a>
     <a href="about.html" class="active">About</a>
     <a href="contact.html">Contact</a>
   </nav>
 
+  <!-- MAIN CONTENT -->
   <main>
-    <p>
-      <strong>Licht Gottes Gemeinde</strong> (የእግዚአብሔር ብርሃን ቤተክርስትያን) is an Ethiopian and Eritrean Evangelical Church located in Karlsruhe, Germany.
-      Our community was founded to share the light of God with believers from Ethiopia, Eritrea, and beyond who live in Karlsruhe and the surrounding area.
-    </p>
+    <p><strong>Licht Gottes Gemeinde</strong> (የእግዚአብሔር ብርሃን ቤተክርስትያን) is an Ethiopian and Eritrean Evangelical Church in Karlsruhe, Germany.</p>
 
-    <p>
-      We worship together every Sunday in <strong>Amharic</strong>, <strong>Tigrinya</strong>, and <strong>German</strong>, and we welcome everyone who seeks fellowship, prayer, and the Word of God.
-      Our mission is to bring people closer to Jesus Christ through love, unity, and service.
-    </p>
-
-    <p>
-      Whether you are new to Karlsruhe or have been living here for years, you are warmly invited to join us for worship and community.
-    </p>
+    <p>We worship together every Sunday in Amharic, Tigrinya, and German and welcome everyone seeking God's presence.</p>
 
     <h3>Our Mission</h3>
     <ul>
-      <li>To spread the gospel of Jesus Christ.</li>
-      <li>To build a spiritual home for Ethiopian and Eritrean believers.</li>
-      <li>To serve our community through love and faith.</li>
+      <li>To spread the gospel of Jesus Christ</li>
+      <li>To support Ethiopian/Eritrean Christian families</li>
+      <li>To build unity, love, and spiritual growth</li>
     </ul>
 
     <p><a href="index.html">← Back to Home</a></p>
   </main>
 
   <footer>
-    &copy; 2025 Licht Gottes Gemeinde | የእግዚአብሔር ብርሃን ቤተክርስትያን
+    © 2025 Licht Gottes Gemeinde | የእግዚአብሔር ብርሃን ቤተክርስትያን
   </footer>
+
 </body>
 </html>
