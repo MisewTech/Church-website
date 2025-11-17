@@ -4,97 +4,125 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Contact Us | Licht Gottes Gemeinde – የእግዚአብሔር ብርሃን ቤተክርስትያን</title>
-  <meta name="description" content="Contact Licht Gottes Gemeinde – Ethiopian and Eritrean Evangelical Church in Karlsruhe. Find our address, phone number, and service times.">
-  <meta name="keywords" content="Ethiopian church Karlsruhe contact, Licht Gottes Gemeinde contact, Eritrean church Karlsruhe, Amharic church Germany, evangelical church Karlsruhe">
-  <meta name="author" content="Licht Gottes Gemeinde">
 
   <style>
     body {
-      font-family: "Noto Sans Ethiopic", "Segoe UI", Arial, sans-serif;
-      background-color: #f4f7fb;
-      color: #222;
       margin: 0;
       padding: 0;
-      text-align: center;
+      font-family: "Noto Sans Ethiopic", Arial, sans-serif;
+      background-color: #f5f7fa;
+      color: #222;
     }
 
-    header {
-      background-color: #0055aa;
-      color: white;
-      padding: 60px 20px;
+    /* HERO */
+    .hero {
+      background: url('Gif.gif') center/cover no-repeat;
+      height: 260px;
+      display: flex;
+      align-items: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      width: 100%; height: 100%;
+      backdrop-filter: blur(6px);
+      background: rgba(0, 0, 0, 0.45);
+    }
+
+    .hero-content {
+      position: relative;
+      display: flex;
+      align-items: center;
+      padding: 0 20px;
+      width: 100%;
+    }
+
+    .hero img {
+      width: 90px;
+      height: 90px;
+      border-radius: 50%;
+      margin-right: 20px;
+    }
+
+    .hero-text h1 {
+      margin: 0;
+      font-size: 2.2em;
+      color: red;
+      font-weight: bold;
+    }
+
+    .hero-text h2 {
+      margin: 5px 0 0 0;
+      font-size: 1.2em;
+      color: #fff;
     }
 
     nav {
-      background-color: #003f80; /* slightly darker blue */
-      padding: 10px 0;
+      background: #003f80;
+      padding: 12px 0;
       text-align: center;
     }
 
     nav a {
       color: white;
+      margin: 0 18px;
       text-decoration: none;
-      font-weight: 500;
-      margin: 0 15px;
       font-size: 1.1em;
-      transition: color 0.3s ease;
-    }
-
-    nav a:hover {
-      color: #ffdd33; /* gold color on hover */
+      font-weight: 500;
     }
 
     nav a.active {
       border-bottom: 2px solid #ffdd33;
     }
 
-    h1 {
-      font-size: 2.2em;
-      margin: 0;
-      font-weight: bold;
+    nav a:hover {
+      color: #ffdd33;
     }
 
     main {
-      padding: 40px 20px;
-      max-width: 800px;
-      margin: auto;
-      text-align: left;
-      line-height: 1.6;
-    }
-
-    a {
-      color: #0055aa;
-      text-decoration: none;
-    }
-
-    a:hover {
-      text-decoration: underline;
+      max-width: 900px;
+      margin: 40px auto;
+      padding: 0 20px;
+      line-height: 1.7;
     }
 
     footer {
-      background-color: #222;
+      background: #222;
       color: #ccc;
       padding: 15px;
+      text-align: center;
+      margin-top: 40px;
       font-size: 0.9em;
-      margin-top: 30px;
     }
   </style>
 </head>
 
 <body>
-  <header>
-    <h1>Contact Us</h1>
-  </header>
 
+  <!-- HERO -->
+  <div class="hero">
+    <div class="hero-content">
+      <img src="logo.png" alt="Church Logo">
+      <div class="hero-text">
+        <h1>የእግዚአብሔር ብርሃን ቤተክርስትያን</h1>
+        <h2>Licht Gottes Gemeinde – Karlsruhe</h2>
+      </div>
+    </div>
+  </div>
+
+  <!-- NAV -->
   <nav>
     <a href="index.html">Home</a>
     <a href="about.html">About</a>
     <a href="contact.html" class="active">Contact</a>
   </nav>
 
+  <!-- CONTENT -->
   <main>
-    <p>
-      We would love to hear from you! Whether you have questions about our services, need prayer, or want to visit, you are always welcome.
-    </p>
+    <p>We would love to hear from you! You are warmly welcome to worship with us.</p>
 
     <h3>Address</h3>
     <p>Bienleinstorstraße 1, 76227 Karlsruhe, Germany</p>
@@ -103,29 +131,18 @@
     <p>Sunday: 14:00 – 16:00</p>
     <p>Friday: 19:00 – 21:00</p>
 
-    <h3>Contact Information</h3>
-    <!-- <p>Phone: <a href="tel:+49123456789"><strong>+49 (0)--- --- ---</strong></a></p> -->
-    <p>Email: <a href="mailto:agapeethio35@gmail.com"><strong>agapeethio35@gmail.com</strong></a></p>
+    <h3>Email</h3>
+    <p><a href="mailto:agapeethio35@gmail.com"><strong>agapeethio35@gmail.com</strong></a></p>
 
-    <h3>Follow Us</h3>
-    <p>
-      <a href="https://www.facebook.com/agapeethiopian.churchkarlsruhe/" target="_blank">Facebook</a> |
-      <!-- <a href="https://www.instagram.com/light.of.god.karlsruhe" target="_blank">Instagram</a> -->
-    </p>
+    <h3>Facebook</h3>
+    <p><a href="https://www.facebook.com/agapeethiopian.churchkarlsruhe/" target="_blank">Visit our Facebook page</a></p>
 
     <p><a href="index.html">← Back to Home</a></p>
   </main>
 
   <footer>
-    &copy; 2025 Licht Gottes Gemeinde | የእግዚአብሔር ብርሃን ቤተክርስትያን
+    © 2025 Licht Gottes Gemeinde | የእግዚአብሔር ብርሃን ቤተክርስትያን
   </footer>
+
 </body>
 </html>
-
-
-
-
-
-
-
-
