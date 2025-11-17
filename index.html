@@ -4,21 +4,21 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <!-- ✅ Improved Title for SEO -->
+  <!-- SEO Title -->
   <title>Ethiopian Evangelical Church in Karlsruhe | Eritrean Evangelical Church in Karlsruhe | የእግዚአብሔር ብርሃን ቤተክርስትያን</title>
-  
+
   <!-- Favicon -->
   <link rel="icon" type="image/x-icon" href="favicon.ico">
 
-  <!-- ✅ SEO Description -->
+  <!-- SEO Description -->
   <meta name="description" content="Ethiopian and Eritrean Evangelical Church in Karlsruhe, Germany. Worship in Amharic, Tigrinya, and German. Join us for prayer, fellowship, and worship services.">
 
-  <!-- ✅ Keywords -->
+  <!-- Keywords -->
   <meta name="keywords" content="church, Karlsruhe, Ethiopia, Amharic, Ethiopian church, Habesha church, Protestant, Evangelical, Eritrea, Tigrinya, Gottes Gemeinde, Ethiopian Evangelical Church Karlsruhe, Licht Gottes, Light of God">
   <meta name="author" content="Licht Gottes Gemeinde">
   <link rel="canonical" href="https://www.light-of-god-karlesruhe.de/" />
 
-  <!-- ✅ Structured Data -->
+  <!-- Structured Data -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -52,16 +52,69 @@
       line-height: 1.6;
     }
 
-    header {
-      background-color: #0055aa;
+    /* ---------- HEADER WITH BLURRED GIF BACKGROUND ---------- */
+    .hero {
+      background: url("Gif.gif") no-repeat center center/cover;
+      padding: 60px 20px;
       color: white;
-      padding: 50px 20px;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      text-align: center;
+      position: relative;
     }
 
+    /* Dark + blur overlay */
+    .hero::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0,0,0,0.45);
+      backdrop-filter: blur(6px);
+    }
+
+    .header-content {
+      position: relative;
+      z-index: 2;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 15px;
+      flex-wrap: wrap;
+    }
+
+    .logo {
+      height: 90px;
+      width: auto;
+      border-radius: 50%;
+      background-color: white;
+      padding: 5px;
+    }
+
+    .title-block {
+      text-align: left;
+    }
+
+    /* Amharic in red */
+    .title-block .amharic {
+      color: #ff3333;
+      font-weight: bold;
+      font-size: 2.4em;
+    }
+
+    /* English subtitle in gold */
+    .title-block .english {
+      font-size: 1.1em;
+      color: #ffdd33;
+      margin-top: 5px;
+      display: block;
+    }
+
+    h2 {
+      margin: 5px 0 0 0;
+      color: #ffdd33;
+    }
+
+    /* ---------- NAVIGATION ---------- */
     nav {
       background-color: #003f80;
       padding: 10px 0;
@@ -74,7 +127,7 @@
       font-weight: 500;
       margin: 0 15px;
       font-size: 1.1em;
-      transition: color 0.3s ease, border-bottom 0.3s ease;
+      transition: 0.3s ease;
     }
 
     nav a:hover {
@@ -86,31 +139,7 @@
       border-bottom: 2px solid #ffdd33;
     }
 
-    h1 {
-      font-size: 2.4em;
-      margin: 0;
-      font-weight: bold;
-      line-height: 1.4;
-    }
-
-    h1 span {
-      display: block;
-    }
-
-    h1 .english {
-      font-size: 0.85em;
-      font-weight: normal;
-      color: #ffdd33;
-      margin-top: 8px;
-    }
-
-    h2 {
-      font-size: 1.8em;
-      font-weight: normal;
-      margin-top: 10px;
-      color: #ffdd33;
-    }
-
+    /* ---------- MAIN CONTENT ---------- */
     main {
       padding: 40px 20px;
       max-width: 800px;
@@ -125,42 +154,41 @@
       font-size: 0.9em;
       margin-top: 40px;
     }
-
-    strong {
-      color: #0055aa;
-    }
   </style>
 </head>
 
 <body>
- <header>
-  <!-- ✅ Two-line title with cross icon -->
-  <div style="display: flex; align-items: center; justify-content: center; gap: 10px;">
-    <span style="font-size: 2em; color: #ffdd33;">✝️</span>
-    <div>
-      <h1 style="margin: 0;">
-        <span>የእግዚአብሔር ብርሃን ቤተክርስትያን</span><br>
+
+  <!-- HEADER WITH GIF BACKGROUND -->
+  <header class="hero">
+    <div class="header-content">
+      <img src="logo.png" alt="Church Logo" class="logo">
+
+      <div class="title-block">
+        <span class="amharic">የእግዚአብሔር ብርሃን ቤተክርስትያን</span>
         <span class="english">Ethiopian and Eritrean Evangelical Church in Karlsruhe</span>
-      </h1>
-      <h2 style="margin: 5px 0 0 0; color: #ffdd33;">Licht Gottes Gemeinde</h2>
+        <h2>Licht Gottes Gemeinde</h2>
+      </div>
     </div>
-  </div>
-</header>
+  </header>
+
+  <!-- NAVIGATION -->
   <nav>
     <a href="index.html" class="active">Home</a>
     <a href="about.html">About</a>
     <a href="contact.html">Contact</a>
   </nav>
 
+  <!-- MAIN CONTENT -->
   <main>
     <h3>Welcome</h3>
     <p>እንኳን ወደ የእግዚአብሔር ብርሃን ቤተክርስትያን በካርልስሩኸ በደህና መጡ።</p>
 
     <p>
-      Welcome to <strong>Licht Gottes Gemeinde</strong> – an Ethiopian and Eritrean Evangelical Church in Karlsruhe.  
+      Welcome to <strong>Licht Gottes Gemeinde</strong> – an Ethiopian and Eritrean Evangelical Church in Karlsruhe.
       We serve the Ethiopian and Eritrean Christian community in Germany. Join us for Sunday services, Bible study, and fellowship.
     </p>
-    
+
     <h3>Address</h3>
     <p>Bienleinstorstraße 1, 76227 Karlsruhe, Germany</p>
 
@@ -171,7 +199,7 @@
     <h3>About Us</h3>
     <p>
       Licht Gottes Gemeinde is an Ethiopian and Eritrean Evangelical Church serving the community of Karlsruhe, Germany.
-      Our mission is to share the light of God through worship, prayer, and service. 
+      Our mission is to share the light of God through worship, prayer, and service.
       We welcome all believers who speak Amharic, Tigrinya, or German to join our services and Bible study.
     </p>
   </main>
@@ -179,10 +207,6 @@
   <footer>
     &copy; 2025 የእግዚአብሔር ብርሃን ቤተክርስትያን | Licht Gottes Gemeinde
   </footer>
+
 </body>
 </html>
-
-
-
-
-
