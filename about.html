@@ -14,15 +14,16 @@
       background-color: #f4f7fb;
       color: #222;
       line-height: 1.6;
-      text-align: center;
+      text-align: left;
     }
 
-    /* ---------- HEADER WITH GIF & BLUR ---------- */
+    /* ---------- HERO ---------- */
     .hero {
       background: url("Gif.gif") no-repeat center center/cover;
       padding: 70px 20px;
       color: white;
       position: relative;
+      text-align: center;
     }
 
     .hero::before {
@@ -33,15 +34,16 @@
       backdrop-filter: blur(6px);
     }
 
-   .header-content {
+    .hero-content {
       position: relative;
       z-index: 2;
       display: flex;
-      justify-content: center;
       align-items: center;
+      justify-content: center; /* CENTERED */
       gap: 20px;
       flex-wrap: wrap;
     }
+
     .logo {
       height: 100px;
       width: auto;
@@ -50,8 +52,7 @@
     }
 
     .title-block {
-      text-align: left;
-      max-width: 500px;
+      text-align: center;
     }
 
     .amharic {
@@ -104,15 +105,11 @@
       margin-top: 35px;
     }
 
-    ul {
-      padding-left: 20px;
-    }
-
     ul li {
       margin-bottom: 8px;
     }
 
-    a.back-link {
+    .back-link {
       display: inline-block;
       margin-top: 30px;
       color: #003f80;
@@ -120,7 +117,7 @@
       font-weight: bold;
     }
 
-    a.back-link:hover {
+    .back-link:hover {
       text-decoration: underline;
     }
 
@@ -136,11 +133,6 @@
 
     /* ---------- RESPONSIVE ---------- */
     @media (max-width: 700px) {
-      .header-content {
-        flex-direction: column;
-        text-align: center;
-      }
-
       .logo {
         height: 80px;
       }
@@ -216,7 +208,3 @@
 
 </body>
 </html>
-
-
-
-
