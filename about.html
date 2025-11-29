@@ -34,15 +34,19 @@
     }
 
     .hero-content {
-    position: relative;
-    z-index: 2;
-    display: flex;
-    align-items: center;
-    justify-content: flex-start; /* <-- forces items to the left */
-    gap: 20px;
-    flex-wrap: wrap;
-    text-align: left; /* ensures text stays aligned */
-  }
+  position: relative;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 20px;
+  flex-wrap: wrap;
+  text-align: left;
+  max-width: 1100px;
+  margin: auto;
+  padding-left: 20px; /* pushes everything from the left nicely */
+}
+
 
     .logo {
       height: 100px;
@@ -218,4 +222,5 @@
 
 </body>
 </html>
+
 
