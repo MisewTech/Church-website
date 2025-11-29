@@ -1,21 +1,16 @@
 <!DOCTYPE html>
 <html lang="am">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <!-- SEO Title -->
-  <title>Ethiopian Evangelical Church in Karlsruhe | Eritrean Evangelical Church in Karlsruhe | የእግዚአብሔር ብርሃን ቤተክርስትያን</title>
+  <title>Ethiopian & Eritrean Evangelical Church in Karlsruhe | የእግዚአብሔር ብርሃን ቤተክርስትያን</title>
 
-  <!-- Favicon -->
-  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <link rel="icon" type="image/x-icon" href="favicon.ico" />
 
-  <!-- SEO Description -->
-  <meta name="description" content="Ethiopian and Eritrean Evangelical Church in Karlsruhe, Germany. Worship in Amharic, Tigrinya, and German. Join us for prayer, fellowship, and worship services.">
-
-  <!-- Keywords -->
-  <meta name="keywords" content="church, Karlsruhe, Ethiopia, Amharic, Ethiopian church, Habesha church, Protestant, Evangelical, Eritrea, Tigrinya, Gottes Gemeinde, Ethiopian Evangelical Church Karlsruhe, Licht Gottes, Light of God">
-  <meta name="author" content="Licht Gottes Gemeinde">
+  <meta name="description" content="Ethiopian and Eritrean Evangelical Church in Karlsruhe. Worship in Amharic, Tigrinya, and German. Join us for prayer, worship services, and fellowship." />
+  <meta name="keywords" content="Ethiopian Church Karlsruhe, Eritrean Church Karlsruhe, Amharic, Tigrinya, Evangelical, Protestant, Habesha Church, Gottes Gemeinde" />
+  <meta name="author" content="Licht Gottes Gemeinde" />
   <link rel="canonical" href="https://www.light-of-god-karlesruhe.de/" />
 
   <!-- Structured Data -->
@@ -23,9 +18,9 @@
   {
     "@context": "https://schema.org",
     "@type": "Church",
-    "name": "Ethiopian and Eritrean Evangelical Church in Karlsruhe",
+    "name": "The Light of God Church",
     "alternateName": "የእግዚአብሔር ብርሃን ቤተክርስትያን",
-    "description": "Ethiopian and Eritrean Evangelical Church in Karlsruhe, Germany. Worship in Amharic, Tigrinya, and German.",
+    "description": "Ethiopian and Eritrean Evangelical Church in Karlsruhe, Germany.",
     "address": {
       "@type": "PostalAddress",
       "streetAddress": "Bienleinstorstraße 1",
@@ -34,6 +29,7 @@
       "addressCountry": "DE"
     },
     "url": "https://www.light-of-god-karlesruhe.de",
+    "language": ["Amharic", "Tigrinya", "German"],
     "sameAs": [
       "https://www.facebook.com/yourpage",
       "https://www.instagram.com/yourpage"
@@ -45,30 +41,25 @@
     body {
       font-family: "Noto Sans Ethiopic", "Segoe UI", Arial, sans-serif;
       background-color: #f4f7fb;
-      color: #222;
       margin: 0;
       padding: 0;
-      text-align: center;
+      color: #222;
       line-height: 1.6;
+      text-align: center;
     }
 
-    /* ---------- HEADER WITH BLURRED GIF BACKGROUND ---------- */
+    /* HEADER */
     .hero {
       background: url("Gif.gif") no-repeat center center/cover;
-      padding: 60px 20px;
+      padding: 70px 20px;
       color: white;
       position: relative;
     }
-
-    /* Dark + blur overlay */
     .hero::before {
       content: "";
       position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: rgba(0,0,0,0.45);
+      inset: 0;
+      background: rgba(0, 0, 0, 0.45);
       backdrop-filter: blur(6px);
     }
 
@@ -76,100 +67,135 @@
       position: relative;
       z-index: 2;
       display: flex;
-      align-items: center;
       justify-content: center;
-      gap: 15px;
+      align-items: center;
+      gap: 20px;
       flex-wrap: wrap;
     }
 
     .logo {
-      height: 90px;
+      height: 100px;
       width: auto;
       border-radius: 50%;
-      background-color: white;
-      /*padding: 5px;*/
+      background: white;
     }
 
     .title-block {
       text-align: left;
+      max-width: 500px;
     }
 
-    /* Amharic in red */
-    .title-block .amharic {
-      color: #ff3333;
+    .amharic {
+      font-size: 2.6em;
       font-weight: bold;
-      font-size: 2.4em;
+      color: #ff3333;
+      display: block;
+      line-height: 1.2;
     }
 
-    /* English subtitle in gold */
-    .title-block .english {
-      font-size: 1.1em;
+    .english {
+      font-size: 1.2em;
       color: #ffdd33;
       margin-top: 5px;
       display: block;
     }
 
     h2 {
-      margin: 5px 0 0 0;
       color: #ffdd33;
+      margin: 6px 0 0;
+      font-size: 1.4em;
     }
 
-    /* ---------- NAVIGATION ---------- */
+    /* NAV */
     nav {
       background-color: #003f80;
-      padding: 10px 0;
+      padding: 12px 5px;
       text-align: center;
     }
-
     nav a {
       color: white;
       text-decoration: none;
+      margin: 0 18px;
+      font-size: 1.15em;
       font-weight: 500;
-      margin: 0 15px;
-      font-size: 1.1em;
       transition: 0.3s ease;
     }
-
-    nav a:hover {
+    nav a:hover,
+    nav a.active {
       color: #ffdd33;
       border-bottom: 2px solid #ffdd33;
     }
 
-    nav a.active {
-      border-bottom: 2px solid #ffdd33;
-    }
-
-    /* ---------- MAIN CONTENT ---------- */
+    /* MAIN */
     main {
       padding: 40px 20px;
-      max-width: 800px;
+      max-width: 900px;
       margin: auto;
       text-align: left;
     }
+    main h3 {
+      color: #003f80;
+      margin-top: 35px;
+    }
 
+    /* FOOTER */
     footer {
-      background-color: #222;
+      margin-top: 50px;
+      padding: 25px;
+      background: #222;
       color: #ccc;
-      padding: 20px;
       font-size: 0.9em;
-      margin-top: 40px;
+    }
+
+    /* RESPONSIVE DESIGN */
+    @media (max-width: 700px) {
+      .header-content {
+        flex-direction: column;
+        text-align: center;
+      }
+      .logo {
+        height: 80px;
+      }
+      .title-block {
+        text-align: center;
+      }
+      .amharic {
+        font-size: 1.9em;
+      }
+      .english {
+        font-size: 0.95em;
+      }
+      h2 {
+        font-size: 1.1em;
+      }
+    }
+
+    @media (max-width: 450px) {
+      .amharic {
+        font-size: 1.6em;
+      }
+      nav a {
+        margin: 0 10px;
+        font-size: 1em;
+      }
     }
   </style>
 </head>
 
 <body>
 
-  <!-- HEADER WITH GIF BACKGROUND -->
+  <!-- HEADER -->
   <header class="hero">
     <div class="header-content">
-      <img src="logo.png" alt="Church Logo" class="logo">
+
+      <img src="logo.png" alt="Church Logo" class="logo" />
 
       <div class="title-block">
         <span class="amharic">የእግዚአብሔር ብርሃን ቤተክርስትያን</span>
         <span class="english">Ethiopian and Eritrean Evangelical Church in Karlsruhe</span>
         <h2>The Light of God Church</h2>
-        <!-- <h2>Licht Gottes Gemeinde</h2> -->
       </div>
+
     </div>
   </header>
 
@@ -183,11 +209,13 @@
   <!-- MAIN CONTENT -->
   <main>
     <h3>Welcome</h3>
+
     <p>እንኳን ወደ የእግዚአብሔር ብርሃን ቤተክርስትያን በካርልስሩኸ በደህና መጡ።</p>
 
     <p>
       Welcome to <strong>The Light of God Church</strong> – an Ethiopian and Eritrean Evangelical Church in Karlsruhe.
-      We serve the Ethiopian and Eritrean Christian community in Germany. Join us for Sunday services, Bible study, and fellowship.
+      We serve the Ethiopian and Eritrean Christian community in Germany. Join us for Sunday services, Bible study,
+      and fellowship.
     </p>
 
     <h3>Address</h3>
@@ -199,9 +227,9 @@
 
     <h3>About Us</h3>
     <p>
-      የእግዚአብሔር ብርሃን ቤተክርስትያን (The Light of God Church) is an Ethiopian and Eritrean Evangelical Church serving the community of Karlsruhe, Germany.
-      Our mission is to share the light of God through worship, prayer, and service.
-      We welcome all believers who speak Amharic, Tigrinya, or German to join our services and Bible study.
+      የእግዚአብሔር ብርሃን ቤተክርስትያን (The Light of God Church) is an Ethiopian and Eritrean Evangelical Church serving
+      the community of Karlsruhe, Germany. Our mission is to share the light of God through worship, prayer, and
+      service. We welcome all believers who speak Amharic, Tigrinya, or German to join our services and Bible study.
     </p>
   </main>
 
@@ -211,7 +239,3 @@
 
 </body>
 </html>
-
-
-
-
