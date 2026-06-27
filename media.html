@@ -285,13 +285,52 @@ target="_blank">
 <h3>📸 Church Gallery</h3>
 
 <p>
-
 Photos and videos from worship services,
 special celebrations,
-and church activities
-will be added here in the future.
-
+and church activities.
 </p>
+
+<div class="slideshow-container">
+    <img class="slide" src="images/church-gallery/photo1.jpg" alt="Church Photo 1">
+    <img class="slide" src="images/church-gallery/photo2.jpg" alt="Church Photo 2">
+    <img class="slide" src="images/church-gallery/photo3.jpg" alt="Church Photo 3">
+    <img class="slide" src="images/church-gallery/photo4.jpg" alt="Church Photo 4">
+</div>
+
+<style>
+.slideshow-container {
+    max-width: 800px;
+    margin: auto;
+}
+
+.slide {
+    display: none;
+    width: 100%;
+    border-radius: 8px;
+}
+</style>
+
+<script>
+let slideIndex = 0;
+showSlides();
+
+function showSlides() {
+    let slides = document.getElementsByClassName("slide");
+
+    for (let i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";
+    }
+
+    slideIndex++;
+    if (slideIndex > slides.length) {
+        slideIndex = 1;
+    }
+
+    slides[slideIndex - 1].style.display = "block";
+
+    setTimeout(showSlides, 4000); // Change image every 4 seconds
+}
+</script>
 
 </main>
 
