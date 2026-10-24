@@ -130,6 +130,49 @@ margin-top:10px;
 .button:hover{
 background:#003f80;
 }
+    
+/* Automatically updated YouTube videos */
+
+.latest-videos {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 24px;
+}
+
+.video-container {
+    background: white;
+    padding: 20px;
+    margin: 0;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.video-container h3 {
+    margin-top: 0;
+    text-align: center;
+    overflow-wrap: anywhere;
+}
+
+.video-date {
+    color: #666;
+    font-size: 0.9rem;
+    text-align: center;
+    margin: 8px 0 14px;
+}
+
+.video-container iframe {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    border: 0;
+    border-radius: 8px;
+    display: block;
+}
+
+@media (min-width: 700px) {
+    .latest-videos {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
 
 /* YOUTUBE VIDEOS */
 
@@ -258,57 +301,10 @@ Watch our worship services, sermons, and special church events below.
 
 </p>
 
-
-<!-- VIDEO 1 -->
-
-<div class="video-container">
-
-<h3>🎬 ጥንትም ፍቅር</h3>
-
-<iframe
-class="youtube-video"
-src="https://www.youtube.com/embed/EKDfQ0jRhqk?start=6"
-title="ጥንትም ፍቅር - Licht Gottes Gemeinde Karlsruhe Durlach"
-allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-allowfullscreen>
-</iframe>
-
+<!-- Latest 3 YouTube videos -->
+<div id="latest-videos" class="latest-videos">
+    <p>Loading the latest church videos...</p>
 </div>
-
-
-<!-- VIDEO 2 -->
-
-<div class="video-container">
-
-<h3>🎬 Church Worship Video 2</h3>
-
-<iframe
-class="youtube-video"
-src="https://www.youtube.com/embed/EKDfQ0jRhqk?start=6"
-title="Licht Gottes Gemeinde Karlsruhe Durlach - Video 2"
-allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-allowfullscreen>
-</iframe>
-
-</div>
-
-
-<!-- VIDEO 3 -->
-
-<div class="video-container">
-
-<h3>🎬 Church Worship Video 3</h3>
-
-<iframe
-class="youtube-video"
-src="https://www.youtube.com/embed/EKDfQ0jRhqk?start=6"
-title="Licht Gottes Gemeinde Karlsruhe Durlach - Video 3"
-allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-allowfullscreen>
-</iframe>
-
-</div>
-
 
 <hr>
 
@@ -463,6 +459,128 @@ Licht Gottes Gemeinde |
 የእግዚአብሔር ብርሃን ቤተክርስትያን
 
 </footer>
+
+const YOUTUBE_API_KEY = "AIzaSyBHJbSgdHFNs60KPINFdl_7ckl26KBOc78";
+const CHANNEL_HANDLE = "LightofGodChurchKarlsruhe";
+const VIDEO_LIMIT = 3;
+
+async function loadLatestVideos() {
+    const container = document.getElementById("latest-videos");
+
+    try {
+        // Find the church channel and its uploads playlist.
+        const channelUrl = new URL(
+            "https://www.googleapis.com/youtube/v3/channels"
+        );
+
+        channelUrl.search = new URLSearchParams({
+            part: "contentDetails",
+            forHandle: CHANNEL_HANDLE,
+            key: YOUTUBE_API_KEY
+        });
+
+        const channelResponse = await fetch(channelUrl);
+        if (!channelResponse.ok) {
+            throw new Error("Could not load the YouTube channel.");
+        }
+
+        const channelData = await channelResponse.json();
+        const channel = channelData.items?.[0];
+
+        if (!channel) {
+            throw new Error("Church channel was not found.");
+        }
+
+        const uploadsPlaylist =
+            channel.contentDetails.relatedPlaylists.uploads;
+
+        // Get the latest three uploaded videos.
+        const playlistUrl = new URL(
+            "https://www.googleapis.com/youtube/v3/playlistItems"
+        );
+
+        playlistUrl.search = new URLSearchParams({
+            part: "snippet,contentDetails",
+            playlistId: uploadsPlaylist,
+            maxResults: String(VIDEO_LIMIT),
+            key: YOUTUBE_API_KEY
+        });
+
+        const videosResponse = await fetch(playlistUrl);
+        if (!videosResponse.ok) {
+            throw new Error("Could not load the latest videos.");
+        }
+
+        const videosData = await videosResponse.json();
+
+        container.replaceChildren();
+
+        const videos = (videosData.items || []).filter(item =>
+            item.snippet?.resourceId?.videoId &&
+            item.snippet.title !== "Private video" &&
+            item.snippet.title !== "Deleted video"
+        );
+
+        if (videos.length === 0) {
+            container.textContent = "No videos are available yet.";
+            return;
+        }
+
+        videos.forEach(video => {
+            const videoId = video.snippet.resourceId.videoId;
+            const title = video.snippet.title;
+            const published = video.contentDetails?.videoPublishedAt
+                || video.snippet.publishedAt;
+
+            const card = document.createElement("div");
+            card.className = "video-container";
+
+            const heading = document.createElement("h3");
+            heading.textContent = "🎬 " + title;
+
+            const date = document.createElement("p");
+            date.className = "video-date";
+            date.textContent = "Published: " +
+                new Date(published).toLocaleDateString();
+
+            const iframe = document.createElement("iframe");
+            iframe.className = "youtube-video";
+            iframe.src =
+                "https://www.youtube-nocookie.com/embed/" +
+                encodeURIComponent(videoId);
+            iframe.title = title;
+            iframe.loading = "lazy";
+            iframe.allow =
+                "accelerometer; autoplay; clipboard-write; " +
+                "encrypted-media; gyroscope; picture-in-picture; web-share";
+            iframe.allowFullscreen = true;
+
+            card.append(heading, date, iframe);
+            container.appendChild(card);
+        });
+
+    } catch (error) {
+        console.error("YouTube loading error:", error);
+        container.replaceChildren();
+
+        const message = document.createElement("p");
+        message.textContent =
+            "The latest videos could not be loaded. " +
+            "Please visit our YouTube channel.";
+        container.appendChild(message);
+
+        const link = document.createElement("a");
+        link.className = "button";
+        link.href =
+            "https://www.youtube.com/@LightofGodChurchKarlsruhe";
+        link.target = "_blank";
+        link.rel = "noopener noreferrer";
+        link.textContent = "Visit our YouTube channel";
+        container.appendChild(link);
+    }
+}
+
+loadLatestVideos();
 
 </body>
 </html>
